@@ -4,7 +4,7 @@ const searchWeather = (e) => {
     e.preventDefault(); 
     document.querySelector('#forecast').innerHTML = "Loading";
 
-    fetch(`http://localhost:3000/weather?address=${e.target.search.value}`).then((response) => {
+    fetch(`/weather?address=${e.target.search.value}`).then((response) => {
       response.json().then((data) => {
         if (data.error) {
             document.querySelector('#forecast').innerHTML = data.error;
